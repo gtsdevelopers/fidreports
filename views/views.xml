@@ -1,0 +1,84 @@
+<openerp>
+  <data>
+    <record model="ir.ui.view" id="view_buttons_form">
+    <field name="name">Buttons</field>
+    <field name="model">button.reports</field>
+    <field name="type">form</field>
+    <field name="arch" type="xml">
+        <form string="Button record">
+        <!--The header tag is built to add buttons within. This puts them at the top -->
+        <header>
+        <!--The oe_highlight class gives the button a red color when it is saved.
+        It is usually used to indicate the expected behaviour. -->
+        <button string="LIST INVOICES" type="object" name="listInvoices" class="oe_highlight"/>
+        
+        </header>
+        <group>
+        <field name="name"/>
+        
+        </group>
+    </form>
+    </field>
+    </record>
+  
+  
+  
+  
+  
+    <!-- explicit list view definition -->
+    <!--
+    <record model="ir.ui.view" id="myreports.list">
+      <field name="name">myreports list</field>
+      <field name="model">myreports.myreports</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="name"/>
+          <field name="value"/>
+          <field name="value2"/>
+        </tree>
+      </field>
+    </record>
+    -->
+
+    <!-- actions opening views on models -->
+    <!--
+    <record model="ir.actions.act_window" id="myreports.action_window">
+      <field name="name">myreports window</field>
+      <field name="res_model">myreports.myreports</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+    -->
+
+    <!-- server action to the one above -->
+    <!--
+    <record model="ir.actions.server" id="myreports.action_server">
+      <field name="name">myreports server</field>
+      <field name="model_id" ref="model_myreports_myreports"/>
+      <field name="code">
+        action = {
+          "type": "ir.actions.act_window",
+          "view_mode": "tree,form",
+          "res_model": self._name,
+        }
+      </field>
+    </record>
+    -->
+
+    <!-- Top menu item -->
+    <!--
+    <menuitem name="myreports" id="myreports.menu_root"/>
+    -->
+    <!-- menu categories -->
+    <!--
+    <menuitem name="Menu 1" id="myreports.menu_1" parent="myreports.menu_root"/>
+    <menuitem name="Menu 2" id="myreports.menu_2" parent="myreports.menu_root"/>
+    -->
+    <!-- actions -->
+    <!--
+    <menuitem name="List" id="myreports.menu_1_list" parent="myreports.menu_1"
+              action="myreports.action_window"/>
+    <menuitem name="Server to list" id="myreports" parent="myreports.menu_2"
+              action="myreports.action_server"/>
+    -->
+  </data>
+</openerp>
